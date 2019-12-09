@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="col-6 mt-5">
+<h4 class="font-weight-bold">{{ contact.title}}</h4>
+    <p>{{contact.phone}}</p>
+    <p>{{contact.email}}</p>
+      <p>{{contact.paragraph}}</p>
+
+  </div>
+
+
+
+  <div class="col-6 mt-5">
+    <agm-map
+      [latitude]="center.lat"
+      [longitude]="center.lng"
+    >
+    <agm-marker *ngFor="let x of contact.departments"
+                [latitude]="x.coordinates.lat"
+                [longitude]="x.coordinates.lng"
+
+
+    >
+    <agm-info-window>
+      <h3>{{ x.title}}</h3>
+    </agm-info-window>
+
+
+    </agm-marker>
+    </agm-map>
+  </div>
+</div>
