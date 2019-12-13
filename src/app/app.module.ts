@@ -10,17 +10,22 @@ import { AboutComponent } from './components/about/about.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import { SliderComponent } from './components/slider/slider.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { ProductComponent } from './components/product/product.component';
+import { BoxesComponent } from './components/boxes/boxes.component';
+import { BoxComponent } from './components/box/box.component';
 
 
 const routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
@@ -34,6 +39,14 @@ const routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'products/:productId',
+    component: ProductComponent
+  },
+  {
+    path: 'boxes',
+    component:BoxesComponent
   }
 
 ];
@@ -48,10 +61,14 @@ const routes = [
     ProductsComponent,
     ContactComponent,
     SliderComponent,
+    ProductComponent,
+    BoxesComponent,
+    BoxComponent,
 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule,
     CommonModule,
     RouterModule.forRoot(routes),
@@ -59,9 +76,12 @@ const routes = [
     BrowserAnimationsModule,
     CarouselModule,
     AgmCoreModule.forRoot({
-      apiKey: ' AIzaSyAJsSz-rnIyisDmreU7O_fGHxNP6DjaZY0'
+      apiKey: ''
     }),
-    CarouselModule
+    CarouselModule,
+    FilterPipeModule,
+
+
 
   ],
   providers: [],

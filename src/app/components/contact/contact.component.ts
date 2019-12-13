@@ -7,11 +7,9 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  public coordinates = [];
   public contact: any = {};
-  public center = {
-    lat: 40.6350739,
-    lng: 22.9427695
-  };
+
   constructor( private http: HttpClient) {
 
 

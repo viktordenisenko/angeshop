@@ -1,31 +1,40 @@
 <div class="container-fluid">
+  <div class="row">
   <div class="col-6 mt-5">
 <h4 class="font-weight-bold">{{ contact.title}}</h4>
     <p>{{contact.phone}}</p>
     <p>{{contact.email}}</p>
       <p>{{contact.paragraph}}</p>
 
+    <select class="custom-select"
+    [(ngModel)]="coordinates">
+      <option value="" selected hidden>Επέλεξε Κατάστημα</option>
+      <option *ngFor = "let opt of contact.departments"
+              [ngValue]="opt.coordinates">
+        {{opt.title}}
+      </option>
+
+    </select>
   </div>
 
 
 
   <div class="col-6 mt-5">
     <agm-map
-      [latitude]="center.lat"
-      [longitude]="center.lng"
+      [latitude]="coordinates.lat"
+      [longitude]="coordinates.lng"
+      [zoom] = "8"
     >
-    <agm-marker *ngFor="let x of contact.departments"
-                [latitude]="x.coordinates.lat"
-                [longitude]="x.coordinates.lng"
-
+    <agm-marker
+      [latitude]="coordinates.lat"
+      [longitude]="coordinates.lng"
 
     >
-    <agm-info-window>
-      <h3>{{ x.title}}</h3>
-    </agm-info-window>
+
 
 
     </agm-marker>
     </agm-map>
   </div>
+</div>
 </div>

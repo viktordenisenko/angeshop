@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  public search: string = '';
   public products: any= {};
   constructor( private http:HttpClient) {
 

@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
 
     this.http.get(" https://simple-api.develobird.gr").subscribe(response =>{
-      this.message= response;
-      console.log(this.message);
+      this.message = response;
+
     })
   }
 
