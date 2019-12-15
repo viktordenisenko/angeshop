@@ -1,0 +1,16 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 text-center">
+    <h2>{{res?.name}}</h2>
+      <p>{{res?.weather[0]?.main}}</p>
+      <p>{{res?.weather[0]?.icon}}</p>
+      <p>Min: {{res?.main?.temp}}&#8451; - Max: {{res?.main?.temp_max}}&#8451;</p>
+      <p> Humidity {{res?.main?.humidity}}</p>
+      <p>Wind {{res?.wind?.speed}}</p>
+
+
+    </div>
+  </div>
+</div>

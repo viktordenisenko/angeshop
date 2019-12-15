@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SliderComponent implements OnInit {
 
-  customOptions: OwlOptions = {
+  customOptions: any = {
     loop: true,
     mouseDrag: false,
     touchDrag: false,
@@ -20,27 +20,22 @@ export class SliderComponent implements OnInit {
     responsive: {
       0: {
         items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 3
       }
     },
     nav: true
   }
+  public response = {};
 
-  constructor( private http:HttpClient) {
-
-
-  }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
 
+    this.http.get('https://simple-api.develobird.gr/home')
+      .subscribe(r => {
+        this.response = r;
+      });
 
   }
 

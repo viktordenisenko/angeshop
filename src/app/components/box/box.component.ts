@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from "../../services/shared.service";
 
 @Component({
   selector: 'app-box',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoxComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public ss: SharedService
+  ) { }
 
   ngOnInit() {
   }

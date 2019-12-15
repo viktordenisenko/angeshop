@@ -21,6 +21,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
 import { ProductComponent } from './components/product/product.component';
 import { BoxesComponent } from './components/boxes/boxes.component';
 import { BoxComponent } from './components/box/box.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 
 const routes = [
@@ -47,6 +48,10 @@ const routes = [
   {
     path: 'boxes',
     component:BoxesComponent
+  },
+  {
+    path: 'weather',
+    component:WeatherComponent
   }
 
 ];
@@ -64,6 +69,7 @@ const routes = [
     ProductComponent,
     BoxesComponent,
     BoxComponent,
+    WeatherComponent,
 
   ],
   imports: [
